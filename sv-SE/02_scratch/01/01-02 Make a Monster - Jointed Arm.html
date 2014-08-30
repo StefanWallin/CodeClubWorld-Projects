@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="world" lang="sv-SE">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="google-site-verification" content="LAa8xdL-G6vOe9RSZnECSduS5m1BMiM8U2erQku5yIE" />
+
+    <title>Monsterförjdupningskort - Ledad Arm — Code Club World Projects</title>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <link rel="stylesheet" href="../../../css/master.min.css">
+  </head>
+
+  <body class="index-template world">
+    <header class="header" role="banner">
+      <a class="home-link" href="../../../index.html"><img alt="" class="logo" height="100" src="../../../img/ccw_logo.png"></a>
+      <h1 class="title">Monsterförjdupningskort - Ledad arm</h1>
+      <span class="level-indicator">Nivå 4</span>
+    </header>
+
+    <nav class="breadcrumbs"><ul class="breadcrumbs-list"><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../../../index.html">Språk</a></li><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../../index.html">Svenska</a></li><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../index.html">Advancerad Scratch</a></li><li class="breadcrumbs-item current">Ledad arm</li></ul></nav>
+
+    <main class="main lesson-steps" role="main">
+<section id="activity-checklist" class="level2 check">
+<h2>Checklista</h2>
+<p>
+  En ledad arm är gjord av <strong>två sprites</strong>, de kan vara ganska svåra att bygga eftersom de två delarna av armen måste veta var den andra delen är för att inte delas upp och se konstig ut. Detta görs genom en matematisk beräkning som kallas <strong>trigonometri</strong> detta används ofta i utveckling av tvspel, robotar och annan häftig teknik.</p>
+  <p> <strong>Vår första sprite är överarmen</strong>, detta är inte alltför svårt, eftersom den bara kommer rotera i axeln och flyttas fram och tillbaka tillsammans med kroppen och våra övriga kroppsdelar. En sak vi måste lägga till är dock att sätta vår arms <code class="blockblue">riktning</code> till en variabel (mer om detta senare).</p>
+<p><img src="5c86347fddb919db0af5f853a218178377cd05d1.png" alt="    när [mellanslag] trycks ned
+        vänd medsols (15) grader
+        sätt [vänster arm] till (riktning)
+        sänd [gick]
+        ändra x med (flytthastighet)" /></p>
+<p>Nästa uträkning används för att kontrollera <strong>underarmen</strong>. Det är här vi använder trigonometri för att räkna ut var underarmen ska placeras (du kan behöva be om hjälp när du gör detta).</p>
+<p><img src="aa78eabac8b59270c0fb415fe64754007131b8ce.png" alt="    när jag tar emot [gick]
+        gå till [Sprite3]
+        gå till: ((x-läge) + ((45) * ([sin] av (vänster arm)))) y: ((y-läge) + ((45) * ([cos] av (vänster arm))))" /></p>
+<p>Vår överarm kommer uppdateras först när eventet <code class="blockbrown">gick</code> skickas, men du kan använda vilket event som helst, så länge överarmen lyssnar på samma event som skickas när kroppen rör sig.</p>
+<p>När överarmen rört sig måste också underarmen följa med. Det gör vi genom att underarmen positionerar sig vid överarmens <strong>centrumpunkt</strong>. Detta borde vara där toppen av överarmen möter axeln i kroppen. Vi vill sedan positionera armbågen på underarmen i andra änden av överarmen. Föreställ dig att när överarmen roterar runt axeln ritar vi en cirkel. För det första, vad är radien på den cirkeln? I vårt exempel är överarmen cirka <strong>45 pixlar</strong> lång.</p>
+<p>Vi vill sen hitta på vilken punkt runt den cirkeln som den andra änden av vår arm är och positionera vår underarm där. Vi använder det trigonometriska utrycket ovan för att göra denna förflyttning och ska en armbåge.</p>
+</section>
+    </main>
+
+    <aside class="legal-notice copyright">
+      <p>These projects are for use outside the UK only. More information is available on our website at <a href="http://www.codeclub.org.uk/">http://www.codeclub.org.uk/</a>. This coursework is developed in the open on GitHub (<a href="https://github.com/CodeClub/">https://github.com/CodeClub</a>), come and join us!</p>
+      <p>&copy; 2014 Code Club. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0 International License</a>.</p>
+    </aside>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30750176-5']);
+      _gaq.push(['_setDomainName', 'projects.codeclubworld.org']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
