@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="world" lang="sv-SE">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="google-site-verification" content="LAa8xdL-G6vOe9RSZnECSduS5m1BMiM8U2erQku5yIE" />
+
+    <title>Monsterförjdupningskort - Ben — Code Club World Projects</title>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <link rel="stylesheet" href="../../../css/master.min.css">
+  </head>
+
+  <body class="index-template world">
+    <header class="header" role="banner">
+      <a class="home-link" href="../../../index.html"><img alt="" class="logo" height="100" src="../../../img/ccw_logo.png"></a>
+      <h1 class="title">Monsterförjdupningskort - Ben</h1>
+      <span class="level-indicator">Nivå 4</span>
+    </header>
+
+    <nav class="breadcrumbs"><ul class="breadcrumbs-list"><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../../../index.html">Språk</a></li><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../../index.html">Svenska</a></li><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../index.html">Advancerad Scratch</a></li><li class="breadcrumbs-item current">Ben</li></ul></nav>
+
+    <main class="main lesson-steps" role="main">
+<section id="activity-checklist" class="level2 check">
+<h2>Checklista</h2>
+<ul>
+<li>Genom att använda två <strong>sprites</strong> för benen kan vi göra så att det ser ut som att monstret går. För att göra detta behöver vi skapa en <strong>variabel</strong> som växlar mellan två lägen, en för benet som rör sig framåt och det andra som rör sig bakåt(vi kommer att alternera vilket läge som är aktivt för de olika benen).</li>
+</ul>
+<p>För att göra detta behöver vi först skapa en varibel, vi kan kalla den <code class="blockorange">steg</code>. Sedan, varje gång något förflyttningsevent sänds, <strong>ökar vi variabelns värde med 1</strong>. Om variabeln blir högre än 1(vi kan testa detta med operatorn större än, <code class="blockgreen">&gt;</code>) nollställer vi den tillbaka till <strong>noll</strong>.</p>
+<p><img src="41db05ada29e6d05d799d7fd7dce0c0a30dbf993.png" alt="    när FLAGGAN klickas på
+        sätt [flytthastighet] till [5]
+        sätt [steg] till [0]
+
+    när jag tar emot [gick vänster]
+        ändra [steg] med [1]
+        om &lt; (steg) &gt; [1] &gt;
+            sätt [steg] till [0]
+        slut
+
+    när jag tar emot [gick höger]
+        ändra [steg] med [1]
+        om &lt; (steg) &gt; [1] &gt;
+            sätt [steg] till [0]
+        slut" /></p>
+<ul>
+<li>Nu kan vi göra så att benen promenerar(svingar längs en cirkels rand) genom att kolla mot vår variabel <code class="blockorange">steg</code>. <strong>När variabeln är satt till noll</strong> kan vi ändra <code class="blockblue">riktning</code> på benens svingrörelser (här använde vi en statisk riktning för att inte benen ska bli tokiga om vår variabel och vinkeln inte matchar, men du kanske vill att ditt monster ska göra så).</li>
+</ul>
+<p>Glöm inte att flytta benen med kroppen med hjälp av variabeln <code class="blockorange">flytthastighet</code>.</p>
+<p><img src="35dfec5fcbf61d2aade9a4dfcb4acd1dcae0de5c.png" alt="    när jag tar emot [gick höger]
+        ändra x med (flytthastighet)
+        om &lt; (steg) = [0] &gt;
+            peka i (180 graders) riktning
+        annars
+            peka i (165 graders) riktning
+        slut
+
+    när jag tar emot [gick vänster]
+    ändra x med (flytthastighet)
+    om &lt; (steg) = [1] &gt;
+        peka i (165 graders) riktning
+    annars
+        peka i (180 graders) riktning
+    slut" /></p>
+<p><strong>Du skulle kunna använda samma sorters åtgärder till att skapa enkla vinkande armar eller till och med flaxande fågelvingar.</strong></p>
+</section>
+    </main>
+
+    <aside class="legal-notice copyright">
+      <p>These projects are for use outside the UK only. More information is available on our website at <a href="http://www.codeclub.org.uk/">http://www.codeclub.org.uk/</a>. This coursework is developed in the open on GitHub (<a href="https://github.com/CodeClub/">https://github.com/CodeClub</a>), come and join us!</p>
+      <p>&copy; 2014 Code Club. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0 International License</a>.</p>
+    </aside>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30750176-5']);
+      _gaq.push(['_setDomainName', 'projects.codeclubworld.org']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
