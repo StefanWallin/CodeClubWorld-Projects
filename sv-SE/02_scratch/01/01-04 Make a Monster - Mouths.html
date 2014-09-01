@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html class="world" lang="sv-SE">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="LAa8xdL-G6vOe9RSZnECSduS5m1BMiM8U2erQku5yIE" />
+    <title>Monsterfördjupningskort - Mun och tal — Code Club World Projects</title>
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="../../../css/master.min.css">
+  </head>
+  <body class="index-template world">
+    <header class="header" role="banner">
+      <a class="home-link" href="../../../index.html"><img alt="" class="logo" height="100" src="../../../img/ccw_logo.png"></a>
+      <h1 class="title">Monsterfördjupningskort - Mun och tal</h1>
+      <span class="level-indicator">Nivå 4</span>
+    </header>
+    <nav class="breadcrumbs"><ul class="breadcrumbs-list"><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../../../index.html">Språk</a></li><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../../index.html">Svenska</a></li><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../index.html">Advancerad Scratch</a></li><li class="breadcrumbs-item current">Mun och tal</li></ul></nav>
+    <main class="main lesson-steps" role="main">
+    <section id="activity-checklist" class="level2 check">
+      <h2>Checklista</h2>
+      <ul>
+        <li><p>För att få ditt monster att tala, kan du använda blocket <code class="blockpurple">Säg</code></p>
+          <p><img src="a6c527dcfcfd6660ee436f754fa49b24ec6c02da.png" alt="när [mellanslag] trycks ned
+        säg [Hallå!] i (2) sekunder" /></p></li>
+        <li><p>
+          För att göra det lite mer imponerande, kan du göra så att <strong>monstrets mun öppnas och stängs</strong> medan den pratar. För att göra detta, redigera spriten som innehåller munnen - skapa en ny <code class="blockpurple">klädsel</code> som har en stängd mun(om den tidigare är öppen). Genom att byta mellan de två kan du animera att munnen öppnas och stängs.</p>
+          <p><img src="33feb6a87f20c98539dbcd1dceb8a3ab7d46db26.png" alt="repetera (8)
+          vänta (0.1) sekunder
+          byt till kostym [mun stängd]
+          vänta (0.1) sekunder
+          byt till kostym [mun öppen]
+        end" /></p></li>
+        <li><p>
+          För att aktivera dem, se till att blocket med <code class="blockpurple">säg</code> sänder ett event som det andra blocket kan reagera på.</p>
+          <p><img src="528e33a7371f994c23a404e2496945585e4d1cc5.png" alt="när [mellanslag] trycks ned
+          skicka [talar]
+          säg [Hallå!] i (2) sekunder
+
+          när jag tar emot [talar]    
+          repetera (8)
+          vänta (0.1) sekunder
+          byt till kostym [mun stängd]
+          vänta (0.1) sekunder
+          byt till kostym [mun öppen]
+        end" /></p></li>
+        <li><p>
+          För att göra detta lite mer flexibelt, använd en variabel för att kontrollera <code class="blockorange">talTiden</code> monstret säger något, använd den även för att kontrollera hur många gånger animationen reptererar.</p>
+          <p><img src="72247feb22551835387cdb221a4b62b0536470b4.png" alt="när [mellanslag] trycks ned
+          sätt [talTiden] till (2)
+          skicka [talar]
+          säg [Hallå!] i (talTiden) sekunder
+          
+          när [a] trycks ned
+          sätt [talTiden] till (4)
+          skicka [talar]
+          säg [Någonting lite längre.] i (talTiden) sekunder
+
+          när jag tar emot [talar]    
+          repetera ((talTiden) * (4))
+          vänta (0.1) sekunder
+          byt till kostym [mun stängd]
+          vänta (0.1) sekunder
+          byt till kostym [mun öppen]
+        sluta" /></p></li>
+      </ul>
+      <p><strong>(Notera hur vi multiplicerar <code class="blockorange">talTiden</code> med 4 för att säkerställa att loopen repeterar tillräckligt många gånger?)</strong></p>
+      <ul>
+        <li><p>
+          Du kan även se till att ditt monster talar genom att avända ljud i något av ljudblocken. Se bara till att importera ljuden först i <strong>Ljud</strong>fliken.</p>
+          <p><img src="22fede61f0444e7056399a43b9be67e4d363f51f.png" alt="när jag tar emot [talar]
+        spela ljudet [skriiiik]" /></p></li>
+      </ul>
+      <p>Varför inte prova att lägga till ljud till andra event? Du skulle kunna använda ett läskigt svävande ljud för ett spöke som driver runt på skärmen!</p>
+      <p>Om du har en mikrofon på din dator kan du även spela in dina egna ljud, överraska dina klubbkamrater genom att spela in ett högt MONSTERVRRRÅÅÅÅÅÅÅL!!!</p>
+    </section>
+    </main>
+    <aside class="legal-notice copyright">
+      <p>These projects are for use outside the UK only. More information is available on our website at <a href="http://www.codeclub.org.uk/">http://www.codeclub.org.uk/</a>. This coursework is developed in the open on GitHub (<a href="https://github.com/CodeClub/">https://github.com/CodeClub</a>), come and join us!</p>
+      <p>&copy; 2014 Code Club. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0 International License</a>.</p>
+    </aside>
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-30750176-5']);
+    _gaq.push(['_setDomainName', 'projects.codeclubworld.org']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+  </body>
+</html>
