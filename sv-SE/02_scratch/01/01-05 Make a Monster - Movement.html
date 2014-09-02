@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="world" lang="sv-SE">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="google-site-verification" content="LAa8xdL-G6vOe9RSZnECSduS5m1BMiM8U2erQku5yIE" />
+
+    <title>Monsterfördjupningskort - Rörelser — Code Club World Projects</title>
+
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <link rel="stylesheet" href="../../../css/master.min.css">
+  </head>
+
+  <body class="index-template world">
+    <header class="header" role="banner">
+      <a class="home-link" href="../../../index.html"><img alt="" class="logo" height="100" src="../../../img/ccw_logo.png"></a>
+      <h1 class="title">Monsterfördjupningskort - Rörelser</h1>
+      <span class="level-indicator">Nivå 4</span>
+    </header>
+
+    <nav class="breadcrumbs"><ul class="breadcrumbs-list"><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../../../index.html">Språk</a></li><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../../index.html">Svenska</a></li><li class="breadcrumbs-item"><a class="breadcrumbs-link" href="../index.html">Advancerad Scratch</a></li><li class="breadcrumbs-item current">Rörelser</li></ul></nav>
+
+    <main class="main lesson-steps" role="main">
+<section id="activity-checklist" class="level2 check">
+<h2>Checklista</h2>
+<ul>
+<li><p>
+  När ditt monster består av många olika <strong>sprites</strong> kommer du behöva säkerställa att alla sprites rör sig tillsammans. Hellre än att lägga till förflyttningskommando till alla dina sprites, kan du enkelt ansluta dina kontroller till din kroppssprite och <code class="blockbrown">skicka</code> events för att kontrollera vilken annan sprite som helst. När våran <strong>tentakelsprite</strong> (eller någon annan sprite för den delen!) tar emot ett <code class="blockbrown">gick höger</code> event, kan vi flytta den åt höger också.</p>
+<p><img src="94b6fa5696d8abb0c2bea8cbfa0211a94ae65887.png" alt="// på spökets kropp
+när [högerpil] trycks ned
+    ändra x med (flytthastighet)
+    skicka [gick höger]
+
+när [vänsterpil] trycks ned
+    ändra x med ((flytthastighet) * (-1))
+    skicka [gick vänster]" /></p>
+<p><img src="82d495745c01735b75c5fed231d2c6387250a88a.png" alt="// på tentakeln
+när jag tar emot [gick höger]
+    ändra x med (flytthastighet)
+
+när jag tar emot [gick vänster]
+    ändra x med ((flytthastighet) * (-1))" /></p></li>
+<li><p>Att <code class="blockbrown">skicka</code> event innebär också att om vi vill ändra på kommandona som styr förflyttningen, behöver vi bara ändra på ett av scripten. <strong>Kika på detta exempel:</strong></p>
+<p><img src="3600bfc7234038610fc3fefb466955a3ee02362a.png" alt="// på spökets kropp
+när [högerpil] trycks ned
+    ändra x med (flytthastighet)
+    peka i (90 graders) riktning
+    studsa, vid kanten
+    om (inte (rör [kant]?))
+        skicka [gick höger]
+        skicka [gick]
+    slut
+
+när [vänsterpil] trycks ned
+    ändra x med ((flytthastighet) * (-1))
+    peka i (-90 graders) riktning
+    studsa, vid kanten
+    om (inte (rör [kant]?))
+        skicka [gick vänster]
+        skicka [gick]
+    slut" /></p></li>
+<li><p>Här säger vi åt kroppen att titta åt det håll som det rör sig (se till att din sprites riktning är satt till att <strong> "bara titta åt höger och vänster"</strong>) och stanna och vända sig om när den kolliderar med skärmens kant. Du kommer också märka att vi har omslutit våra sändningar i ett <code class="blockyellow">om</code>-block, vi vill bara att de andra kroppsdelarna ska flytta sig om kroppen inte är på skärmens kant. <strong>Om du bestämmer dig för att lägga till animering i rörelsen, måste alla andra rörelse ta en sekund också (använd ett <code class="blockyellow">vänta</code>-block för att se till att de alla är i fas).</strong></p></li>
+<li><p>
+  Du kan också animera din kropps sprite genom att byta <code class="blockpurple">klädsel</code>, gör det genom att byta varje gång ett <strong>gick</strong> event tas emot.</p>
+<p><img src="7ccf9082e79780a1622af3dc91f78d89ca0e93b1.png" alt="när jag tar emot [gick höger]
+    nästa klädsel" /></p></li>
+</ul>
+</section>
+    </main>
+
+    <aside class="legal-notice copyright">
+      <p>These projects are for use outside the UK only. More information is available on our website at <a href="http://www.codeclub.org.uk/">http://www.codeclub.org.uk/</a>. This coursework is developed in the open on GitHub (<a href="https://github.com/CodeClub/">https://github.com/CodeClub</a>), come and join us!</p>
+      <p>&copy; 2014 Code Club. This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0 International License</a>.</p>
+    </aside>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30750176-5']);
+      _gaq.push(['_setDomainName', 'projects.codeclubworld.org']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
